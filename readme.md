@@ -1,1 +1,1 @@
-Este projeto é um CRUD, utilizando Frameworks, metodologias ágeis e boas práticas. 
+Este projeto é um CRUD.
