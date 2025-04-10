@@ -1,4 +1,5 @@
 <?php
+        session_start();
 
         include_once('config.php');
         $email = $_POST['email'];
@@ -12,5 +13,18 @@
 
         $result = $conexao->query($sql);
 
-    
+        if(mysqli_num_rows($result) < 1) 
+        {
+                unset($_SESSION['email']);
+                unset($_SESSION['senha']);
+                header('Location: login.html');
+        } 
+        else 
+        {
+                $_SESSION['email'] = $email;
+                $_SESSION['senha'] = $senha;
+                header('Location: sistema.php');
+        }
+        
+
 ?>
